@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEVFORGE | High-Performance Game Experiences</title>
+    <meta name="description" content="DEVFORGE is a premium gaming agency forging high-performance mobile experiences for the Amazon Appstore.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="cursor"></div>
+
+    <!-- Navigation -->
+    <nav class="glass">
+        <div class="nav-container container">
+            <div class="logo">DEVFORGE<span>.</span></div>
+            <ul class="nav-links">
+                <li><a href="#games">Our Games</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#amazon-featured" class="btn-amazon">Amazon Store</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-background" style="background-image: url('assets/hero.png'); background-size: cover; background-position: center; opacity: 0.2;"></div>
+        <div class="container hero-content">
+            <h1 class="reveal"><span class="gradient-text">Forging</span><br>Digital Worlds</h1>
+            <p class="reveal">We create immersive mobile game experiences optimized for high-performance and global reach on the Amazon Appstore.</p>
+            <div class="hero-btns reveal">
+                <a href="#games" class="btn-primary">Explore Our Games</a>
+                <a href="#contact" class="btn-secondary">Start a Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Games Section -->
+    <section id="games">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="gradient-text">Our Games</h2>
+                <p>Selected titles forged with passion and technical precision.</p>
+            </div>
+            <div class="games-grid">
+                <!-- Game 1 -->
+                <div class="game-card reveal">
+                    <div class="game-image">
+                        <img src="assets/racing.png" alt="Cyber Racing">
+                    </div>
+                    <div class="game-info">
+                        <h3>Cyber Rush</h3>
+                        <p>High-speed cyberpunk racing.</p>
+                        <a href="#" class="btn-amazon">Get it on Amazon</a>
+                    </div>
+                </div>
+                <!-- Game 2 -->
+                <div class="game-card reveal">
+                    <div class="game-image">
+                        <img src="assets/rpg.png" alt="Fantasy RPG">
+                    </div>
+                    <div class="game-info">
+                        <h3>Aether Quest</h3>
+                        <p>Epic fantasy RPG adventure.</p>
+                        <a href="#" class="btn-amazon">Get it on Amazon</a>
+                    </div>
+                </div>
+                <!-- Game 3 -->
+                <div class="game-card reveal">
+                    <div class="game-image">
+                        <img src="assets/puzzle.png" alt="Neon Puzzle">
+                    </div>
+                    <div class="game-info">
+                        <h3>Prism Logic</h3>
+                        <p>Futuristic geometric puzzles.</p>
+                        <a href="#" class="btn-amazon">Get it on Amazon</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amazon Featured Section -->
+    <section id="amazon-featured">
+        <div class="container">
+            <div class="amazon-banner glass reveal">
+                <div class="amazon-text">
+                    <h2>Available on Amazon Appstore</h2>
+                    <p>Experience our games on Fire Tablets and Android devices globally.</p>
+                </div>
+                <div class="amazon-cta">
+                    <a href="#" class="btn-primary" style="background: var(--accent-amazon);">Visit Storefront</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <h2 class="gradient-text">About DEVFORGE</h2>
+                    <p>Based on the minimalist principles of elite digital agencies, we specialize in building game experiences that push the boundaries of mobile hardware.</p>
+                    <p>Our focus on the Amazon ecosystem allows us to deliver highly optimized games for millions of users worldwide.</p>
+                </div>
+                <div class="about-visual glass reveal"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-box glass reveal">
+                <div class="section-header" style="text-align: center;">
+                    <h2 class="gradient-text">Contact Us</h2>
+                    <p>Let's collaborate on your next big game idea.</p>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group full">
+                        <textarea placeholder="Message" rows="6" required></textarea>
+                    </div>
+                    <div class="form-group full" style="text-align: center;">
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">DEVFORGE<span>.</span></div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+                <p>&copy; 2026 DEVFORGE Games. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
