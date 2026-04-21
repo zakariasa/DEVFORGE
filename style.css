@@ -32,7 +32,7 @@
     --transition-smooth: all 0.6s cubic-bezier(0.2, 0, 0.2, 1);
 }
 
-body::before {
+        body::before {
     content: "";
     position: fixed;
     top: 0;
@@ -40,7 +40,7 @@ body::before {
     width: 100%;
     height: 100%;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Ffilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    opacity: 0.04;
+    opacity: 0.02;
     pointer-events: none;
     z-index: 9999;
 }
@@ -263,14 +263,14 @@ nav {
 #hero h1 {
     font-size: clamp(4rem, 10vw, 7rem);
     line-height: 0.9;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 #hero p {
     font-size: 1.4rem;
     color: var(--text-secondary);
     max-width: 600px;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 }
 
 /* Games Section */
@@ -395,10 +395,10 @@ nav {
 .about-visual {
     height: 500px;
     border-radius: 32px;
-    background-image: url('assets/hero_v3.png');
+    background-image: url('assets/hero_kids.png');
     background-size: cover;
     background-position: center;
-    opacity: 0.15;
+    opacity: 0.12;
 }
 
 /* Process Section */
