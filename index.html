@@ -33,7 +33,8 @@
 
     <!-- Hero Section -->
     <section id="hero">
-        <div class="hero-background" style="background-image: url('assets/hero_v3.png'); background-size: cover; background-position: center; opacity: 0.35;"></div>
+        <canvas id="hero-particles"></canvas>
+        <div class="hero-background" style="background-image: url('assets/hero_v3.png'); background-size: cover; background-position: center; opacity: 0.2;"></div>
         <div class="container hero-content">
             <h1 class="reveal"><span class="gradient-text">Forging</span><br>Digital Worlds</h1>
             <p class="reveal">We create immersive mobile game experiences optimized for high-performance and global reach on the Amazon Appstore.</p>
@@ -58,6 +59,7 @@
                         <img src="assets/racing.png" alt="Cyber Racing">
                     </div>
                     <div class="game-info">
+                        <div class="platform-badge">Amazon Fire</div>
                         <h3>Cyber Rush</h3>
                         <p>High-speed cyberpunk racing.</p>
                         <a href="#" class="btn-amazon">Get it on Amazon</a>
@@ -69,6 +71,7 @@
                         <img src="assets/rpg.png" alt="Fantasy RPG">
                     </div>
                     <div class="game-info">
+                        <div class="platform-badge">Amazon Fire</div>
                         <h3>Aether Quest</h3>
                         <p>Epic fantasy RPG adventure.</p>
                         <a href="#" class="btn-amazon">Get it on Amazon</a>
@@ -80,6 +83,7 @@
                         <img src="assets/puzzle.png" alt="Neon Puzzle">
                     </div>
                     <div class="game-info">
+                        <div class="platform-badge">Amazon Fire</div>
                         <h3>Prism Logic</h3>
                         <p>Futuristic geometric puzzles.</p>
                         <a href="#" class="btn-amazon">Get it on Amazon</a>
@@ -114,6 +118,38 @@
                     <p><strong>Our Mission:</strong> To design games that are easy to pick up, yet hard to put down. We focus on vibrant aesthetics, smooth performance, and engaging gameplay loops that keep players coming back for more.</p>
                 </div>
                 <div class="about-visual glass reveal"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Forge Section (Process) -->
+    <section id="process">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="gradient-text">The Forge</h2>
+                <p>Our systematic approach to crafting digital excellence.</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-card glass reveal">
+                    <div class="process-num">01</div>
+                    <h3>Ideation</h3>
+                    <p>Conceptualizing unique mechanics and immersive worlds that resonate with global audiences.</p>
+                </div>
+                <div class="process-card glass reveal">
+                    <div class="process-num">02</div>
+                    <h3>Development</h3>
+                    <p>High-performance engineering using cutting-edge engines to ensure smooth gameplay on all devices.</p>
+                </div>
+                <div class="process-card glass reveal">
+                    <div class="process-num">03</div>
+                    <h3>Refinement</h3>
+                    <p>Polishing every frame, sound, and interaction until the experience feels truly premium.</p>
+                </div>
+                <div class="process-card glass reveal">
+                    <div class="process-num">04</div>
+                    <h3>Deployment</h3>
+                    <p>Seamless integration with the Amazon Appstore for global distribution and performance tracking.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -169,6 +205,10 @@
                         <button type="submit" class="btn-primary">Send Message</button>
                     </div>
                 </form>
+                <div class="contact-email reveal">
+                    <span>Direct Email:</span>
+                    <a href="mailto:support@devforgegame.com">support@devforgegame.com</a>
+                </div>
             </div>
         </div>
     </section>
@@ -179,6 +219,7 @@
             <div class="footer-content">
                 <div class="logo">DEVFORGE<span>.</span></div>
                 <div class="footer-links">
+                    <a href="mailto:support@devforgegame.com">support@devforgegame.com</a>
                     <a href="privacy.html">Privacy Policy</a>
                     <a href="terms.html">Terms of Use</a>
                 </div>

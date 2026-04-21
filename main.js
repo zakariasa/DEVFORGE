@@ -17,42 +17,127 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Custom Cursor
 const cursor = document.querySelector("#cursor");
+const cursorInner = document.createElement("div");
+cursorInner.classList.add("cursor-inner");
+cursor.appendChild(cursorInner);
+
+let mouseX = 0;
+let mouseY = 0;
+let cursorX = 0;
+let cursorY = 0;
+
 window.addEventListener("mousemove", (e) => {
-    gsap.to(cursor, {
-        x: e.clientX,
-        y: e.clientY,
-        duration: 0.1,
-        ease: "power2.out"
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+
+function animateCursor() {
+    let dx = mouseX - cursorX;
+    let dy = mouseY - cursorY;
+    
+    cursorX += dx * 0.15;
+    cursorY += dy * 0.15;
+    
+    cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0)`;
+    
+    requestAnimationFrame(animateCursor);
+}
+animateCursor();
+
+// Cursor Interaction
+const interactiveElements = document.querySelectorAll("a, button, input, textarea, .game-card");
+interactiveElements.forEach(el => {
+    el.addEventListener("mouseenter", () => {
+        cursor.classList.add("cursor-active");
+        gsap.to(cursor, { scale: 2.5, duration: 0.3 });
+    });
+    el.addEventListener("mouseleave", () => {
+        cursor.classList.remove("cursor-active");
+        gsap.to(cursor, { scale: 1, duration: 0.3 });
     });
 });
 
+// Hero Particles
+const canvas = document.getElementById("hero-particles");
+if (canvas) {
+    const ctx = canvas.getContext("2d");
+    let particles = [];
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+window.addEventListener("resize", resizeCanvas);
+resizeCanvas();
+
+class Particle {
+    constructor() {
+        this.reset();
+    }
+    reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2;
+        this.speedX = (Math.random() - 0.5) * 0.5;
+        this.speedY = (Math.random() - 0.5) * 0.5;
+        this.opacity = Math.random() * 0.5;
+    }
+    update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.x > canvas.width || this.x < 0 || this.y > canvas.height || this.y < 0) {
+            this.reset();
+        }
+    }
+    draw() {
+        ctx.fillStyle = `rgba(0, 242, 255, ${this.opacity})`;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+    }
+}
+
+for (let i = 0; i < 100; i++) {
+    particles.push(new Particle());
+}
+
+function animateParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => {
+        p.update();
+        p.draw();
+    });
+    requestAnimationFrame(animateParticles);
+}
+animateParticles();
+}
+
 // Hero Animation
 const heroTl = gsap.timeline();
-heroTl.from("#hero h1", {
-    y: 100,
+heroTl.from("nav", {
+    y: -50,
     opacity: 0,
-    duration: 1.2,
-    ease: "power4.out",
-    stagger: 0.2
+    duration: 1,
+    ease: "power3.out"
 })
+.from("#hero h1", {
+    clipPath: "inset(0 100% 0 0)",
+    opacity: 0,
+    duration: 1.5,
+    ease: "power4.out"
+}, "-=0.5")
 .from("#hero p", {
     y: 30,
     opacity: 0,
-    duration: 0.8,
+    duration: 1,
     ease: "power3.out"
-}, "-=0.8")
+}, "-=1")
 .from(".hero-btns", {
     y: 20,
     opacity: 0,
-    duration: 0.8,
+    duration: 1,
     ease: "power3.out"
-}, "-=0.6")
-.from("nav", {
-    y: -100,
-    opacity: 0,
-    duration: 1.2,
-    ease: "power4.out"
-}, "-=1.2");
+}, "-=0.8");
 
 // Reveal Animations
 const revealElements = document.querySelectorAll(".reveal");
