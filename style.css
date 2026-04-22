@@ -296,6 +296,7 @@ nav {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 4rem;
+    justify-content: center;
 }
 
 .game-card {
