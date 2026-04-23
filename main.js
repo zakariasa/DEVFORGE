@@ -32,6 +32,8 @@ window.addEventListener("mousemove", (e) => {
 });
 
 function animateCursor() {
+    if (window.matchMedia("(hover: none) and (pointer: coarse)").matches) return;
+    
     let dx = mouseX - cursorX;
     let dy = mouseY - cursorY;
     
@@ -206,3 +208,28 @@ gameCards.forEach(card => {
         });
     });
 });
+// Mobile Menu Toggle
+const hamburger = document.querySelector('.hamburger');
+const mobileMenu = document.querySelector('.mobile-menu-overlay');
+const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
+
+if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+        
+        if (mobileMenu.classList.contains('active')) {
+            lenis.stop();
+        } else {
+            lenis.start();
+        }
+    });
+
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            lenis.start();
+        });
+    });
+}
